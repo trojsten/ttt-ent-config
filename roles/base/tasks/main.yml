@@ -6,3 +6,9 @@
     line: 'management ALL=(ALL) NOPASSWD: ALL'
     create: true
     validate: 'visudo -cf %s'
+
+- name: copy snapshot utils to root home
+  become: true
+  ansible.builtin.copy:
+    src: ent-snapshot
+    dest: /root
