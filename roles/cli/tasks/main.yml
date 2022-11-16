@@ -1,0 +1,27 @@
+- name: install cli editors
+  tags: cli-editors
+  kewlfft.aur.aur:
+    name:
+      - nano
+      - vim
+
+- name: install cli administration utils
+  tags: cli-admin
+  kewlfft.aur.aur:
+    name:
+      - htop
+      - traceroute
+      - cifs-utils  # CIFS (Windows network drives)
+      - openbsd-netcat
+      - curl
+      - wget
+
+- name: install cli utils
+  tags: cli-utils
+  kewlfft.aur.aur:
+    name:
+      - zip
+      - unzip
+      - man-db
+      - man-pages
+
