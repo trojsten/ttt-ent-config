@@ -1,0 +1,35 @@
+---
+- name: install mint themes and fonts
+  kewlfft.aur.aur:
+    state: present
+    name:
+      - mint-themes
+      - mint-y-icons
+
+- name: configure theme
+  dconf:
+    key: "/org/cinnamon/theme/name"
+    value: "'Mint-Y-Dark'"
+  become: true
+  become_user: trojsten
+
+- name: configure cursor theme
+  dconf:
+    key: "/org/cinnamon/desktop/interface/cursor-theme"
+    value: "'Adwaita'"
+  become: true
+  become_user: trojsten
+
+- name: configure GTK theme
+  dconf:
+    key: "/org/cinnamon/desktop/interface/gtk-theme"
+    value: "'Mint-Y-Dark'"
+  become: true
+  become_user: trojsten
+
+- name: configure icon theme
+  dconf:
+    key: "/org/cinnamon/desktop/interface/icon-theme"
+    value: "'Mint-Y-Dark'"
+  become: true
+  become_user: trojsten
