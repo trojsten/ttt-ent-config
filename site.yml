@@ -1,0 +1,22 @@
+---
+- hosts: all
+  roles:
+    - role: base
+      tags: base
+    - role: yay
+      tags: yay
+    - role: cinnamon
+      tags: cinnamon
+    - role: fonts
+      tags: fonts
+    - role: power
+      tags: power
+
+- hosts: all
+  roles:
+    - role: apps
+      tags: apps
+    - role: coding
+      tags: coding
+    - role: cli
+      tags: cli
