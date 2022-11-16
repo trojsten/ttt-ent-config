@@ -24,3 +24,6 @@
 
 - import_tasks: js.yml
   tags: coding-js
+
+- import_tasks: arduino.yml
+  tags: coding-arduino

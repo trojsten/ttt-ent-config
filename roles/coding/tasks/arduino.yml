@@ -1,0 +1,13 @@
+- name: install arduino ide
+  kewlfft.aur.aur:
+    state: present
+    name:
+      - arduino
+
+- name: add user to uucp group
+  user:
+    name: "trojsten"
+    groups:
+      - uucp
+    append: yes
+  become: yes
