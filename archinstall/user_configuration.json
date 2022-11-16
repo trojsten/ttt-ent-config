@@ -1,0 +1,30 @@
+{
+    "audio": "pipewire",
+    "bootloader": "systemd-bootctl",
+    "config_version": "2.5.1",
+    "debug": false,
+    "desktop-environment": "cinnamon",
+    "gfx_driver": "All open-source (default)",
+    "harddrives": [
+        "/dev/sda"
+    ],
+    "hostname": "archlinux",
+    "nic": {
+        "dhcp": true,
+        "dns": null,
+        "gateway": null,
+        "iface": null,
+        "ip": null,
+        "type": "nm"
+    },
+    "no_pkg_lookups": false,
+    "offline": false,
+    "profile": {
+        "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/desktop.py"
+    },
+    "script": "guided",
+    "silent": false,
+    "sys-language": "en_GB",
+    "timezone": "Europe/Bratislava",
+    "version": "2.5.1"
+}
