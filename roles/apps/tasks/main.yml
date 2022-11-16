@@ -1,3 +1,6 @@
 ---
 - import_tasks: firefox.yml
   tags: apps-firefox
+
+- import_tasks: multimedia.yml
+  tags: apps-multimedia

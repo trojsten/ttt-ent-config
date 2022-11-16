@@ -1,0 +1,13 @@
+- name: install multimedia apps
+  kewlfft.aur.aur:
+    name:
+      - xed     # text editor
+      - xreader # PDF viewer
+      - xviewer # image viewer
+      - vlc
+      - blender
+      - inkscape
+      - gimp
+      - kdenlive
+      - breeze  # for kdenlive
+      - audacity
