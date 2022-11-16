@@ -1,0 +1,7 @@
+- name: install C++ utilities
+  kewlfft.aur.aur:
+    name:
+      - gcc
+      - gdb
+      - make
+      - cmake

@@ -15,3 +15,6 @@
 
 - import_tasks: python.yml
   tags: coding-python
+
+- import_tasks: cpp.yml
+  tags: coding-cpp
