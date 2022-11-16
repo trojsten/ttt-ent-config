@@ -1,0 +1,14 @@
+---
+- name: install common programs
+  kewlfft.aur.aur:
+    name:
+      - git
+      - code
+      - gedit
+
+- name: configure gedit theme
+  dconf:
+    key: "/org/gnome/gedit/preferences/editor/scheme"
+    value: "'oblivion'"
+  become: true
+  become_user: trojsten
