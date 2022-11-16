@@ -7,3 +7,6 @@
 
 - import_tasks: utils.yml
   tags: apps-utils
+
+- import_tasks: games.yml
+  tags: apps-games

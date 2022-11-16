@@ -1,0 +1,4 @@
+- name: install games
+  kewlfft.aur.aur:
+    name:
+      - picomc
