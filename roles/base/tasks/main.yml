@@ -1,0 +1,8 @@
+---
+- name: allow the management user to use sudo without password
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/11-nopasswd-management
+    line: 'management ALL=(ALL) NOPASSWD: ALL'
+    create: true
+    validate: 'visudo -cf %s'
