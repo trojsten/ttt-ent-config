@@ -1,0 +1,5 @@
+- name: install Node
+  kewlfft.aur.aur:
+    name:
+      - nodejs
+      - npm

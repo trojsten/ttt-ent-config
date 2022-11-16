@@ -21,3 +21,6 @@
 
 - import_tasks: java.yml
   tags: coding-java
+
+- import_tasks: js.yml
+  tags: coding-js
