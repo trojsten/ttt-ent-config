@@ -1,0 +1,17 @@
+---
+- name: enable pacman parallel downloads
+  lineinfile:
+    path: /etc/pacman.conf
+    insertafter: "^#ParallelDownloads"
+    line: ParallelDownloads = 10
+    regexp: "^ParallelDownloads"
+  become: true
+
+- name: install
+  kewlfft.aur.aur:
+    name: yay-bin
+
+- name: update cache
+  pacman:
+    update_cache: true
+  become: true
