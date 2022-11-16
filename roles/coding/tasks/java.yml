@@ -1,0 +1,4 @@
+- name: install JDK
+  kewlfft.aur.aur:
+    name:
+      - jdk-openjdk
