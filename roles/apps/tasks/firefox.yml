@@ -1,0 +1,5 @@
+---
+- name: install firefox
+  kewlfft.aur.aur:
+    name:
+      - firefox
