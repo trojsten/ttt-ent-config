@@ -1,0 +1,12 @@
+---
+- name: disable auto sleep 
+  dconf:
+    key: "/org/cinnamon/settings-daemon/plugins/power/{{ item }}"
+    value: "0"
+  loop:
+    - sleep-display-ac
+    - sleep-display-battery
+    - sleep-inactive-ac-timeout
+    - sleep-inactive-battery-timeout
+  become: true
+  become_user: trojsten
