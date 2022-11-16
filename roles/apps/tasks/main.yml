@@ -4,3 +4,6 @@
 
 - import_tasks: multimedia.yml
   tags: apps-multimedia
+
+- import_tasks: utils.yml
+  tags: apps-utils

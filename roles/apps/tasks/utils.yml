@@ -1,0 +1,5 @@
+- name: install utils
+  kewlfft.aur.aur:
+    name:
+      - nemo
+      - nemo-fileroller # file (de)compression
