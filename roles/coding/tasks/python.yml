@@ -1,0 +1,12 @@
+- name: install Python utilities
+  kewlfft.aur.aur:
+    name:
+      - tk  # tkinter
+      - python-pip
+      - python-pipenv
+
+- name: install Python IDEs
+  kewlfft.aur.aur:
+    name:
+      - pycharm-community-jre
+      - thonny

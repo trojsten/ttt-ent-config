@@ -12,3 +12,6 @@
     value: "'oblivion'"
   become: true
   become_user: trojsten
+
+- import_tasks: python.yml
+  tags: coding-python
