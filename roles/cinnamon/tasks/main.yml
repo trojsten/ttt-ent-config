@@ -33,3 +33,16 @@
     value: "'Mint-Y-Dark'"
   become: true
   become_user: trojsten
+
+- name: copy background
+  copy:
+    src: bg.png
+    dest: /usr/share/backgrounds/trojsten.png
+  become: true
+
+- name: configure background
+  dconf:
+    key: "/org/cinnamon/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/trojsten.png'"
+  become: true
+  become_user: trojsten
