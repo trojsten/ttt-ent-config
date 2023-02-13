@@ -12,3 +12,8 @@
   ansible.builtin.copy:
     src: ent-snapshot
     dest: /root
+
+- name: set hostname
+  become: true
+  hostname:
+    name: "{{ ent_name }}"
