@@ -1,4 +1,10 @@
 ---
+- name: copy ssh key
+  ansible.posix.authorized_key:
+    user: management
+    state: present
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMX73gPFV3zp1vmx84fDuRGGKqV1tur5X/OMSiv8UzgD"
+
 - name: allow the management user to use sudo without password
   become: true
   ansible.builtin.lineinfile:
