@@ -1,0 +1,6 @@
+---
+- name: install wine packages
+  kewlfft.aur.aur:
+    name:
+      - wine
+      - wine-nine

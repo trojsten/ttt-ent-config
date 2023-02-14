@@ -20,3 +20,5 @@
       tags: coding
     - role: cli
       tags: cli
+    - role: wine
+      tags: wine
