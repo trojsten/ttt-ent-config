@@ -7,11 +7,19 @@
     regexp: "^ParallelDownloads"
   become: true
 
-- name: install
-  kewlfft.aur.aur:
-    name: yay-bin
+- name: enable multilib
+  blockinfile:
+    path: /etc/pacman.conf
+    block: |
+      [multilib]
+      Include = /etc/pacman.d/mirrorlist
+  become: true
 
 - name: update cache
   pacman:
     update_cache: true
   become: true
+
+- name: install
+  kewlfft.aur.aur:
+    name: yay-bin
