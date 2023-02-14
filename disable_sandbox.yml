@@ -1,0 +1,23 @@
+---
+- hosts: all
+  tasks:
+  - name: Copy boot entry
+    copy:
+      dest: /boot/loader/entries/ent.conf
+      content: |
+        title Trojten ENT (Management)
+        linux /vmlinuz-linux
+        initrd /intel-ucode.img
+        initrd /initramfs-linux.img
+        options root=/dev/sda2 zswap.enabled=0 rootflags=subvol=@ rw intel_pstate=no_hwp rootfstype=btrfs 
+    become: true
+
+  - name: Reboot
+    ansible.builtin.reboot:
+    become: true
+
+  - name: Unlock management user
+    ansible.builtin.user:
+      name: management
+      password_lock: false
+    become: true

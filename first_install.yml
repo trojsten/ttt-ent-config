@@ -1,0 +1,8 @@
+---
+- name: install
+  import_playbook: site.yml
+- hosts: all
+  tasks:
+  - name: reboot
+    ansible.builtin.reboot:
+    become: true

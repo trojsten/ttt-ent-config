@@ -1,0 +1,33 @@
+---
+- hosts: all
+  tasks:
+  - name: Remove old sandbox
+    file:
+      path: /.sandbox
+      state: absent
+    become: true
+
+  - name: Make new sandbox
+    command: /usr/bin/btrfs subvolume snapshot / /.sandbox
+    become: true
+
+  - name: Copy boot entry
+    copy:
+      dest: /boot/loader/entries/ent.conf
+      content: |
+        title Trojten ENT (Sandbox)
+        linux /vmlinuz-linux
+        initrd /intel-ucode.img
+        initrd /initramfs-linux.img
+        options root=/dev/sda2 zswap.enabled=0 rootflags=subvol=@/.sandbox rw intel_pstate=no_hwp rootfstype=btrfs 
+    become: true
+
+  - name: Reboot
+    ansible.builtin.reboot:
+    become: true
+
+  - name: Lock management user
+    ansible.builtin.user:
+      name: management
+      password_lock: true
+    become: true
