@@ -1,0 +1,24 @@
+---
+- name: install printing packages
+  kewlfft.aur.aur:
+    name:
+      - cups
+      - ghostscript
+      - gsfonts
+      - foo2zjs-nightly # Hermiona
+      - simple-scan
+
+- name: enable cups autostart
+  systemd:
+    name: cups
+    enabled: yes
+    state: started
+  become: yes
+
+- name: add user to lp group
+  user:
+    name: trojsten
+    groups:
+      - lp
+    append: yes
+  become: yes

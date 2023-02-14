@@ -11,6 +11,8 @@
       tags: fonts
     - role: power
       tags: power
+    - role: printing
+      tags: printing
 
 - hosts: all
   roles:
