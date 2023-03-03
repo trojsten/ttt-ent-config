@@ -3,3 +3,4 @@
   kewlfft.aur.aur:
     name:
       - firefox
+      - firefox-ublock-origin
