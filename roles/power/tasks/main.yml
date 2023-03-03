@@ -10,3 +10,20 @@
     - sleep-inactive-battery-timeout
   become: true
   become_user: trojsten
+
+- name: disable screensaver
+  dconf:
+    key: "/org/cinnamon/desktop/screensaver/{{ item }}"
+    value: "false"
+  loop:
+    - idle-activation-enabled
+    - lock-enabled
+  become: true
+  become_user: trojsten
+
+- name: disable idle timeout
+  dconf:
+    key: "/org/cinnamon/desktop/session/idle-delay"
+    value: "uint32 0"
+  become: true
+  become_user: trojsten
