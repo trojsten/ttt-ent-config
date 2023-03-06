@@ -25,3 +25,8 @@
       - man-db
       - man-pages
 
+- name: install x11vnc
+  tags: cli-x11vnc
+  kewlfft.aur.aur:
+    name:
+      - x11vnc
