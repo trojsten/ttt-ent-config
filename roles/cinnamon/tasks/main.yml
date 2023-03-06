@@ -46,3 +46,23 @@
     value: "'file:///usr/share/backgrounds/trojsten.png'"
   become: true
   become_user: trojsten
+
+- name: add nopasswdlogin group
+  ansible.builtin.group:
+      name: nopasswdlogin
+      state: present
+  become: true
+
+- name: add trojsten to nopasswdlogin
+  user:
+    name: trojsten
+    groups: nopasswdlogin
+    append: yes
+  become: true
+
+- name: enable nopasswdlogin in lightdm
+  ansible.builtin.lineinfile:
+    path: /etc/pam.d/lightdm
+    insertafter: '^#%PAM'
+    line: 'auth sufficient pam_succeed_if.so user ingroup nopasswdlogin'
+  become: true
