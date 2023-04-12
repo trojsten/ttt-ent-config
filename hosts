@@ -1,5 +1,21 @@
+[legacy]
 management@10.3.1.100 ent_name=delikvent
 management@10.3.1.101 ent_name=pacient
 management@10.3.1.102 ent_name=cement
 management@10.3.1.103 ent_name=dement
 management@10.3.1.104 ent_name=exkrement
+
+[entertainment]
+management@10.3.0.13 ent_name=entertainment
+
+[agent]
+management@10.3.1.110 ent_name=agent-000
+management@10.3.1.111 ent_name=agent-001
+management@10.3.1.112 ent_name=agent-002
+management@10.3.1.113 ent_name=agent-003
+management@10.3.1.114 ent_name=agent-004
+management@10.3.1.115 ent_name=agent-005
+management@10.3.1.116 ent_name=agent-006
+management@10.3.1.117 ent_name=agent-007
+management@10.3.1.118 ent_name=agent-008
+management@10.3.1.119 ent_name=agent-009

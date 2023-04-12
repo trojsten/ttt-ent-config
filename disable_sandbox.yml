@@ -9,7 +9,7 @@
         linux /vmlinuz-linux
         initrd /intel-ucode.img
         initrd /initramfs-linux.img
-        options root=/dev/sda2 zswap.enabled=0 rootflags=subvol=@ rw intel_pstate=no_hwp rootfstype=btrfs 
+        options root=/dev/{{ boot_drive }} zswap.enabled=0 rootflags=subvol=@ rw intel_pstate=no_hwp rootfstype=btrfs 
     become: true
 
   - name: Reboot
