@@ -4,6 +4,8 @@
       - tk  # tkinter
       - python-pip
       - python-pipenv
+      - python-numpy
+      - python-matplotlib
 
 - name: install Python IDEs
   kewlfft.aur.aur:

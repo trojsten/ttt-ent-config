@@ -1,0 +1,9 @@
+- name: install R utilities
+  kewlfft.aur.aur:
+    name:
+      - r
+
+- name: install R IDEs
+  kewlfft.aur.aur:
+    name:
+      - rstudio-desktop-bin
