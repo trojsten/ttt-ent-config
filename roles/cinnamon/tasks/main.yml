@@ -66,3 +66,11 @@
     insertafter: '^#%PAM'
     line: 'auth sufficient pam_succeed_if.so user ingroup nopasswdlogin'
   become: true
+
+- name: hide management from login screen
+  ansible.builtin.copy:
+    dest: /var/lib/AccountsService/users/management
+    content: |
+      [User]
+      SystemAccount=true
+  become: true
