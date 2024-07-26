@@ -1,0 +1,12 @@
+---
+- name: disable sandbox
+  ansible.builtin.import_playbook: disable_sandbox.yml
+
+- name: upgrade packages
+  ansible.builtin.import_playbook: upgrade.yml
+
+- name: run site
+  ansible.builtin.import_playbook: site.yml
+
+- name: enable sandbox
+  ansible.builtin.import_playbook: enable_sandbox.yml

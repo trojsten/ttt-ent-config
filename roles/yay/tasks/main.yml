@@ -1,30 +1,34 @@
 ---
-- name: enable pacman parallel downloads
-  lineinfile:
-    path: /etc/pacman.conf
-    insertafter: "^#ParallelDownloads"
-    line: ParallelDownloads = 10
-    regexp: "^ParallelDownloads"
+- name: add chaotic aur keys
+  community.general.pacman_key:
+    id: ef925ea60f33d0cb85c44ad13056513887b78aeb
+    keyserver: hkps://keyserver.ubuntu.com:443
   become: true
 
-- name: enable multilib
-  blockinfile:
-    path: /etc/pacman.conf
-    block: |
-      [multilib]
-      Include = /etc/pacman.d/mirrorlist
-  become: true
+- name: check for chaotic aur mirrorlist
+  stat: path=/etc/pacman.d/chaotic-mirrorlist
+  register: mirrorlist
 
-- name: update cache
-  pacman:
-    update_cache: true
+- name: install mirrorlist
+  community.general.pacman:
+    name:
+      - https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst
+    state: present
   become: true
+  when: not mirrorlist.stat.exists
+
+- name: check for chaotic aur keyring
+  stat: path=/usr/share/pacman/keyrings/chaotic.gpg
+  register: keyring
+
+- name: install keyring
+  community.general.pacman:
+    name:
+      - https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
+    state: present
+  become: true
+  when: not keyring.stat.exists
 
 - name: install
   kewlfft.aur.aur:
-    name: yay-bin
-
-- name: upgrade
-  kewlfft.aur.aur:
-    update_cache: true
-    upgrade: true
+    name: yay

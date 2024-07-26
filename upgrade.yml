@@ -1,0 +1,25 @@
+---
+- hosts: all
+  tasks:
+  - name: update cache
+    become: true
+    pacman:
+      update_cache: true
+
+  - name: update keyring
+    kewlfft.aur.aur:
+      name: archlinux-keyring
+      state: latest
+
+  - name: upgrade
+    kewlfft.aur.aur:
+      upgrade: true
+
+  - name: remove orphans
+    ansible.builtin.shell: pacman -Qtdq | pacman -Rns - --noconfirm
+    become: true
+    ignore_errors: true
+
+  - name: upgrade
+    kewlfft.aur.aur:
+      upgrade: true

@@ -19,7 +19,67 @@
     src: ent-snapshot
     dest: /root
 
+- name: copy pacman config
+  become: true
+  ansible.builtin.copy:
+    src: pacman.conf
+    dest: /etc/pacman.conf
+
 - name: set hostname
   become: true
   hostname:
     name: "{{ ent_name }}"
+
+- name: copy login-block script
+  become: true
+  ansible.builtin.copy:
+    src: login-block
+    dest: /usr/local/bin/login-block
+    mode: 0700
+
+- name: copy login-block service
+  become: true
+  ansible.builtin.copy:
+    src: login-block.service
+    dest: /etc/systemd/system/login-block.service
+    mode: 0644
+
+- name: enable login-block service
+  become: true
+  systemd:
+    name: login-block
+    enabled: true
+
+
+- name: copy reset-ent-sandbox script
+  become: true
+  ansible.builtin.copy:
+    src: reset-ent-sandbox
+    dest: /usr/local/bin/reset-ent-sandbox
+    mode: 0700
+
+- name: copy reset-ent-sandbox service
+  become: true
+  ansible.builtin.copy:
+    src: reset-ent-sandbox.service
+    dest: /etc/systemd/system/reset-ent-sandbox.service
+
+- name: copy reset boot entry
+  become: true
+  copy:
+    dest: /boot/loader/entries/ent-reset.conf
+    content: |
+      title RESET AGENT SANDBOX
+      linux /vmlinuz-linux
+      initrd /intel-ucode.img
+      initrd /initramfs-linux.img
+      options root=/dev/{{ boot_drive }} zswap.enabled=0 rootflags=subvol=@ rw intel_pstate=no_hwp rootfstype=btrfs systemd.unit=reset-ent-sandbox.service
+
+- name: copy systemd-boot config
+  become: true
+  copy:
+    dest: /boot/loader/loader.conf
+    content: |
+      timeout 10
+      editor false
+      auto-firmware false

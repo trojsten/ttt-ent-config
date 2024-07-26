@@ -3,8 +3,24 @@
   kewlfft.aur.aur:
     name:
       - git
-      - code
+      - vscodium
       - gedit
+      - docker
+      - docker-compose
+
+- name: add user to docker group
+  ansible.builtin.user:
+    name: trojsten
+    groups: docker
+    append: true
+  become: true
+
+- name: enable docker service
+  ansible.builtin.systemd_service:
+    name: docker
+    state: started
+    enabled: true
+  become: true
 
 - name: configure gedit theme
   dconf:

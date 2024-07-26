@@ -27,3 +27,11 @@
     value: "uint32 0"
   become: true
   become_user: trojsten
+
+- name: poweroff on lid close
+  become: true
+  lineinfile:
+    path: /etc/systemd/logind.conf
+    line: "HandleLidSwitch=poweroff"
+    regex: "^HandleLidSwitch="
+    insertafter: "^#HandleLidSwitch="

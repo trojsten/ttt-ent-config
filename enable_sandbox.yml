@@ -15,7 +15,7 @@
     copy:
       dest: /boot/loader/entries/ent.conf
       content: |
-        title Trojten ENT (Sandbox)
+        title Trojten (Sandbox)
         linux /vmlinuz-linux
         initrd /intel-ucode.img
         initrd /initramfs-linux.img

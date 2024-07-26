@@ -1,0 +1,7 @@
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/usr/local/bin/reset-ent-sandbox
+
+StandardOutput=journal+console

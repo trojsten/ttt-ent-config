@@ -1,10 +1,10 @@
 ---
 - hosts: all
   roles:
-    - role: base
-      tags: base
     - role: yay
       tags: yay
+    - role: base
+      tags: base
     - role: cinnamon
       tags: cinnamon
     - role: fonts
