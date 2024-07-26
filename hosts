@@ -1,11 +1,11 @@
 [agent]
-management@10.3.1.110 ent_name=agent-000
-management@10.3.1.111 ent_name=agent-001
-management@10.3.1.112 ent_name=agent-002
-management@10.3.1.113 ent_name=agent-003
-management@10.3.1.114 ent_name=agent-004
-management@10.3.1.115 ent_name=agent-005
-management@10.3.1.116 ent_name=agent-006
-management@10.3.1.117 ent_name=agent-007
-management@10.3.1.118 ent_name=agent-008
-management@10.3.1.119 ent_name=agent-009
+management@10.83.0.100 ent_name=agent-000
+management@10.83.0.101 ent_name=agent-001
+management@10.83.0.102 ent_name=agent-002
+management@10.83.0.103 ent_name=agent-003
+management@10.83.0.104 ent_name=agent-004
+management@10.83.0.105 ent_name=agent-005
+management@10.83.0.106 ent_name=agent-006
+management@10.83.0.107 ent_name=agent-007
+management@10.83.0.108 ent_name=agent-008
+management@10.83.0.109 ent_name=agent-009
