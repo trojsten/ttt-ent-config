@@ -50,6 +50,11 @@
     name: login-block
     enabled: true
 
+- name: enable bluetooth service
+  become: true
+  systemd:
+    name: bluetooth
+    enabled: true
 
 - name: copy reset-ent-sandbox script
   become: true
