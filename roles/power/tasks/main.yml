@@ -11,6 +11,16 @@
   become: true
   become_user: trojsten
 
+- name: shutdown on lid close
+  dconf:
+    key: "/org/cinnamon/settings-daemon/plugins/power/{{ item }}"
+    value: "'shutdown'"
+  loop:
+    - lid-close-battery-action
+    - lid-close-ac-action
+  become: true
+  become_user: trojsten
+
 - name: disable screensaver
   dconf:
     key: "/org/cinnamon/desktop/screensaver/{{ item }}"
@@ -35,3 +45,11 @@
     line: "HandleLidSwitch=poweroff"
     regex: "^HandleLidSwitch="
     insertafter: "^#HandleLidSwitch="
+
+- name: poweroff on lid close (ac)
+  become: true
+  lineinfile:
+    path: /etc/systemd/logind.conf
+    line: "HandleLidSwitchExternalPower=poweroff"
+    regex: "^HandleLidSwitchExternalPower="
+    insertafter: "^#HandleLidSwitchExternalPower="
