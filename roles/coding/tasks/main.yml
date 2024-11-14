@@ -7,11 +7,19 @@
       - gedit
       - docker
       - docker-compose
+      - wireshark-qt
 
 - name: add user to docker group
   ansible.builtin.user:
     name: trojsten
     groups: docker
+    append: true
+  become: true
+
+- name: add user to wireshark group
+  ansible.builtin.user:
+    name: trojsten
+    groups: wireshark
     append: true
   become: true
 

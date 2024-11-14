@@ -1,9 +1,15 @@
 ---
-- name: copy ssh key
+- name: copy ssh key (adam)
   ansible.posix.authorized_key:
     user: management
     state: present
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMX73gPFV3zp1vmx84fDuRGGKqV1tur5X/OMSiv8UzgD"
+    
+- name: copy ssh key (andrej)
+  ansible.posix.authorized_key:
+    user: management
+    state: present
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN85Cd7yRsRBSSKK75lxpsu7erPRh7WuxXQPKrDzkM9Z andrej.lackovic@trojsten.sk"
 
 - name: allow the management user to use sudo without password
   become: true
