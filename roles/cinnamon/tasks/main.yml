@@ -6,6 +6,20 @@
       - mint-themes
       - mint-y-icons
 
+- name: configure keyboard layouts
+  dconf:
+    key: "/org/gnome/libgnomekbd/keyboard/layouts"
+    value: "['us', 'sk']"
+  become: true
+  become_user: trojsten
+
+- name: allow super + space to change layout
+  dconf:
+    key: "/org/gnome/libgnomekbd/keyboard/options"
+    value: "['grp\tgrp:win_space_toggle']"
+  become: true
+  become_user: trojsten
+
 - name: configure theme
   dconf:
     key: "/org/cinnamon/theme/name"
