@@ -15,6 +15,10 @@
     kewlfft.aur.aur:
       upgrade: true
 
+  # - name: rebuild yay if upgrading python
+  #   ansible.builtin.shell: yay -S $(pacman -Qoq /usr/lib/python3.12) --answerclean All  --noconfirm
+  #   ignore_errors: true
+
   - name: remove orphans
     ansible.builtin.shell: pacman -Qtdq | pacman -Rns - --noconfirm
     become: true
