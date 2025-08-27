@@ -11,6 +11,11 @@
       name: archlinux-keyring
       state: latest
 
+  - name: update chaotic aur keyring
+    kewlfft.aur.aur:
+      name: chaotic-keyring
+      state: latest
+
   - name: upgrade
     kewlfft.aur.aur:
       upgrade: true
