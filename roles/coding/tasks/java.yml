@@ -2,3 +2,7 @@
   kewlfft.aur.aur:
     name:
       - jdk-openjdk
+
+- name: set default Java version to the newer one
+  ansible.builtin.shell: archlinux-java set $(archlinux-java status | grep java | sed "s/(default)//" | sort -n | head -n 1)
+  become: true
