@@ -27,3 +27,11 @@
   - name: upgrade
     kewlfft.aur.aur:
       upgrade: true
+
+  - name: clear uninstalled packages from cache
+    ansible.builtin.shell: paccache -ruk0 
+    become: true
+
+  - name: clear old versions of installed packages from cache
+    ansible.builtin.shell: paccache -r
+    become: true

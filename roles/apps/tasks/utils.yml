@@ -3,3 +3,4 @@
     name:
       - nemo
       - nemo-fileroller # file (de)compression
+      - pacman-contrib
