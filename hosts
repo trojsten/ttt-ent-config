@@ -1,11 +1,11 @@
 [agent]
-management@10.83.0.100 ent_name=agent-000
-management@10.83.0.101 ent_name=agent-001
-management@10.83.0.102 ent_name=agent-002
-management@10.83.0.103 ent_name=agent-003
-management@10.83.0.104 ent_name=agent-004
-management@10.83.0.105 ent_name=agent-005
-management@10.83.0.106 ent_name=agent-006
-management@10.83.0.107 ent_name=agent-007
-management@10.83.0.108 ent_name=agent-008
-management@10.83.0.109 ent_name=agent-009
+management@10.83.0.100 ent_name=agent-000 wg_address=10.85.254.100/16
+management@10.83.0.101 ent_name=agent-001 wg_address=10.85.254.101/16
+management@10.83.0.102 ent_name=agent-002 wg_address=10.85.254.102/16
+management@10.83.0.103 ent_name=agent-003 wg_address=10.85.254.103/16
+management@10.83.0.104 ent_name=agent-004 wg_address=10.85.254.104/16
+management@10.83.0.105 ent_name=agent-005 wg_address=10.85.254.105/16
+management@10.83.0.106 ent_name=agent-006 wg_address=10.85.254.106/16
+management@10.83.0.107 ent_name=agent-007 wg_address=10.85.254.107/16
+management@10.83.0.108 ent_name=agent-008 wg_address=10.85.254.108/16
+management@10.83.0.109 ent_name=agent-009 wg_address=10.85.254.109/16

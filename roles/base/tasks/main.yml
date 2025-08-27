@@ -4,7 +4,7 @@
     user: management
     state: present
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMX73gPFV3zp1vmx84fDuRGGKqV1tur5X/OMSiv8UzgD"
-    
+
 - name: copy ssh key (andrej)
   ansible.posix.authorized_key:
     user: management
@@ -94,3 +94,6 @@
       timeout 10
       editor false
       auto-firmware false
+
+- import_tasks: wireguard.yml
+  tags: base-wireguard
