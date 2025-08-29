@@ -47,10 +47,10 @@
 
 - name: disallow network manager from managing wireguard connection
   copy:
-    dest: "/etc/NetworkManager/conf.d/10-do-not-manage-trojsten-wireguard.conf"
+    dest: "/etc/NetworkManager/conf.d/10-do-not-manage-{{ wg_interface }}-wireguard.conf"
     content: |
       [keyfile]
-      unmanaged-devices=interface-name:trojsten
+      unmanaged-devices=interface-name:{{ wg_interface }}
   become: true
 
 - name: enable and start wireguard tunnel
