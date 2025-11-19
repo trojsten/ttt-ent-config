@@ -1,11 +1,11 @@
 [agent]
-management@10.83.0.100 ent_name=agent-000 wg_address=10.85.254.100/16
-management@10.83.0.101 ent_name=agent-001 wg_address=10.85.254.101/16
-management@10.83.0.102 ent_name=agent-002 wg_address=10.85.254.102/16
-management@10.83.0.103 ent_name=agent-003 wg_address=10.85.254.103/16
-management@10.83.0.104 ent_name=agent-004 wg_address=10.85.254.104/16
-management@10.83.0.105 ent_name=agent-005 wg_address=10.85.254.105/16
-management@10.83.0.106 ent_name=agent-006 wg_address=10.85.254.106/16
-management@10.83.0.107 ent_name=agent-007 wg_address=10.85.254.107/16
-management@10.83.0.108 ent_name=agent-008 wg_address=10.85.254.108/16
-management@10.83.0.109 ent_name=agent-009 wg_address=10.85.254.109/16
+management@172.16.16.10 ent_name=agent-000 wg_address=172.16.47.230/16
+management@172.16.16.11 ent_name=agent-001 wg_address=172.16.47.231/16
+management@172.16.16.12 ent_name=agent-002 wg_address=172.16.47.232/16
+management@172.16.16.13 ent_name=agent-003 wg_address=172.16.47.233/16
+management@172.16.16.14 ent_name=agent-004 wg_address=172.16.47.234/16
+management@172.16.16.15 ent_name=agent-005 wg_address=172.16.47.235/16
+management@172.16.16.16 ent_name=agent-006 wg_address=172.16.47.236/16
+management@172.16.16.17 ent_name=agent-007 wg_address=172.16.47.237/16
+management@172.16.16.18 ent_name=agent-008 wg_address=172.16.47.238/16
+management@172.16.16.19 ent_name=agent-009 wg_address=172.16.47.239/16
