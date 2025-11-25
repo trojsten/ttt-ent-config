@@ -1,0 +1,4 @@
+- name: install Love2d
+  kewlfft.aur.aur:
+    name:
+      - love

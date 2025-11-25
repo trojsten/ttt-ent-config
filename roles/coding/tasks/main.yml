@@ -54,3 +54,9 @@
 
 - import_tasks: arduino.yml
   tags: coding-arduino
+
+- import_tasks: love2d.yml
+  tags: coding-love2d
+
+- import_tasks: opencode.yml
+  tags: coding-opencode

@@ -1,0 +1,4 @@
+- name: install opencode
+  kewlfft.aur.aur:
+    name:
+      - opencode-bin
