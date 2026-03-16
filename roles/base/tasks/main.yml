@@ -11,6 +11,12 @@
     state: present
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN85Cd7yRsRBSSKK75lxpsu7erPRh7WuxXQPKrDzkM9Z andrej.lackovic@trojsten.sk"
 
+- name: copy ssh key (kubos)
+  ansible.posix.authorized_key:
+    user: management
+    state: present
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIFhFRBU8bZlMaWNKSf+bIObFUaIYMHSrjBYecQSqtRH jaksia@eidolon"
+
 - name: allow the management user to use sudo without password
   become: true
   ansible.builtin.lineinfile:
