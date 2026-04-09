@@ -2,7 +2,7 @@
   kewlfft.aur.aur:
     state: present
     name:
-      - arduino
+      - arduino-ide-bin
 
 - name: add user to uucp group
   user:
