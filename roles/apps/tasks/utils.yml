@@ -4,3 +4,4 @@
       - nemo
       - nemo-fileroller # file (de)compression
       - pacman-contrib
+      - fuse2 # appimages
