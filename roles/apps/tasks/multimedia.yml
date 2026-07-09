@@ -5,6 +5,7 @@
       - xreader # PDF viewer
       - xviewer # image viewer
       - vlc
+      - vlc-plugin-ffmpeg # actual codecs
       - blender
       - inkscape
       - gimp
