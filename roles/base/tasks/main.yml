@@ -101,5 +101,8 @@
       editor false
       auto-firmware false
 
+- import_tasks: wifi.yml
+  tags: base-wifi
+
 - import_tasks: wireguard.yml
   tags: base-wireguard

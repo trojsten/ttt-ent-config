@@ -1,0 +1,18 @@
+---
+- name: install wifi connection profile
+  ansible.builtin.copy:
+    src: Trojsten.nmconnection
+    dest: /etc/NetworkManager/system-connections/Trojsten.nmconnection
+    owner: root
+    group: root
+    mode: '0600'
+  become: true
+
+- name: reload NetworkManager connections
+  ansible.builtin.command: nmcli connection reload
+  become: true
+
+- name: activate Trojsten connection
+  ansible.builtin.command: nmcli connection up Trojsten
+  become: true
+  ignore_errors: true
