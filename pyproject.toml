@@ -1,16 +1,9 @@
-[tool.poetry]
+[project]
 name = "ttt-ent-config"
 version = "0.1.0"
 description = ""
 authors = ["Adam Zahradník <adam@zahradnik.xyz>"]
-readme = "README.md"
-package-mode = false
-
-[tool.poetry.dependencies]
-python = "^3.11"
-ansible = "^9.5.1"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.12"
+dependencies = [
+	"ansible~=9.5.1"
+]
