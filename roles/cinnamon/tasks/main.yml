@@ -7,42 +7,42 @@
       - mint-y-icons
 
 - name: configure keyboard layouts
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/libgnomekbd/keyboard/layouts"
     value: "['us', 'sk']"
   become: true
   become_user: trojsten
 
 - name: allow super + space to change layout
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/libgnomekbd/keyboard/options"
     value: "['grp\tgrp:win_space_toggle']"
   become: true
   become_user: trojsten
 
 - name: configure theme
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/theme/name"
     value: "'Mint-Y-Dark'"
   become: true
   become_user: trojsten
 
 - name: configure cursor theme
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/interface/cursor-theme"
     value: "'Adwaita'"
   become: true
   become_user: trojsten
 
 - name: configure GTK theme
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/interface/gtk-theme"
     value: "'Mint-Y-Dark'"
   become: true
   become_user: trojsten
 
 - name: configure icon theme
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/interface/icon-theme"
     value: "'Mint-Y-Dark'"
   become: true
@@ -55,7 +55,7 @@
   become: true
 
 - name: configure background
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/background/picture-uri"
     value: "'file:///usr/share/backgrounds/trojsten.png'"
   become: true

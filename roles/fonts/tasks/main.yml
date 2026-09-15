@@ -8,35 +8,35 @@
       - ttf-fira-mono
 
 - name: configure font
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/interface/font-name"
     value: "'Noto Sans 10'"
   become: true
   become_user: trojsten
 
 - name: configure titlebar font
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/wm/preferences/titlebar-font"
     value: "'Noto Sans Bold 10'"
   become: true
   become_user: trojsten
 
 - name: configure monospace font
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/desktop/interface/monospace-font-name"
     value: "'Fira Mono 10'"
   become: true
   become_user: trojsten
 
 - name: configure document font
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/desktop/interface/document-font-name"
     value: "'Noto Sans 10'"
   become: true
   become_user: trojsten
 
 - name: configure desktop font
-  dconf:
+  community.general.dconf:
     key: "/org/nemo/desktop"
     value: "'Noto Sans 10'"
   become: true

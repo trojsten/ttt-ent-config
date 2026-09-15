@@ -31,7 +31,7 @@
   become: true
 
 - name: configure gedit theme
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/gedit/preferences/editor/scheme"
     value: "'oblivion'"
   become: true

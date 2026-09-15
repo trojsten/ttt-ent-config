@@ -3,7 +3,7 @@
   tasks:
   - name: update cache
     become: true
-    pacman:
+    community.general.pacman:
       update_cache: true
 
   - name: update keyring
